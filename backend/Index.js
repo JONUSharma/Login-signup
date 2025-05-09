@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(bodyParser.json())
 app.use(cors(
     {
-        origin : "https://login-signup-auth-hwiw.onrender.com",
+        'Access-Control-Allow-Origin' : "https://login-signup-auth-hwiw.onrender.com",
         credentials : true
     }
 ));
