@@ -26,7 +26,7 @@ function Signup() {
             return HandleError("name, email and password is required")
         }
         try {
-            const url = "http://localhost:2020/signup";
+            const url = "https://login-signup-87we.onrender.com/signup";
             const response = await fetch(url, {
                 method: "POST",
                 headers: {

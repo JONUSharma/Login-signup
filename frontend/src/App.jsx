@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Login from './assets/Login'
-import Signup from './assets/signup'
+import Signup from './assets/Signup'
 import Home from './assets/Home'
 import "react-toastify/ReactToastify.css"
 import "./App.css"
