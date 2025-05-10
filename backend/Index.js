@@ -8,7 +8,7 @@ const app = express();
 
 require("dotenv").config();
 const PORT = process.env.PORT || 2020;
-const URL = process.env.DATABASE
+const URL = process.env.DATABASE ||" mongodb://localhost:27017/Mern"
 
 //Connection with mongodb
 ConnectMongoDb(URL)
