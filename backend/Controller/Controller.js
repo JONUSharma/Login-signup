@@ -16,7 +16,7 @@ const signup = async (req, res) => {
     } catch (error) {
         res.status(500)
             .cookie(userModel, {
-                sameSite: 'None',
+                sameSite: 'none',
                 httpOnly: true,
                 expires: new Date(Date.now() + 2 * 24 * 60 * 1000),
                 secure: process.env.NODE_ENV === "production"
