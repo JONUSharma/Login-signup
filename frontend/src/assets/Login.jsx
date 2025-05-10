@@ -25,7 +25,7 @@ function Login() {
             return HandleError(" email and password is required")
         }
         try {
-            const url = "https://login-signup-87we.onrender.com/login";
+            const url = `${import.meta.env.VITE_BACKEND_URL}/login`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {

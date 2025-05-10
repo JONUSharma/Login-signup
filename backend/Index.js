@@ -8,8 +8,7 @@ const app = express();
 
 require("dotenv").config();
 const PORT = process.env.PORT || 2020;
-
-const URL = "mongodb://localhost:27017/Mern"
+const URL = process.env.DATABASE
 
 //Connection with mongodb
 ConnectMongoDb(URL)
@@ -19,15 +18,12 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}))
 app.use(bodyParser.json())
 app.use(cors(
-    {
-        'Access-Control-Allow-Origin' : "https://login-signup-auth-hwiw.onrender.com",
-        credentials : true
-    }
+    // {origin : process.env.FRONTEND_URL,
+    //     credentials : true,
+    //     allowedHeaders : ['Content-Type','Authorization']
+    // }
 ));
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://login-signup-auth-hwiw.onrender.com');
-    next();
-  });
+
 
 //routes
 app.use("/",route)

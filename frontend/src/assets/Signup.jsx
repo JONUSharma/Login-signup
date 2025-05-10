@@ -13,7 +13,6 @@ function Signup() {
     
     const HandleChange = (e) => {
         const { name, value } = e.target;
-       
         const signupinfo = { ...getValue }
         signupinfo[name] = value;
         setValue(signupinfo)
@@ -26,7 +25,7 @@ function Signup() {
             return HandleError("name, email and password is required")
         }
         try {
-            const url = "https://login-signup-87we.onrender.com/signup";
+            const url = `${import.meta.env.VITE_BACKEND_URL}/signup`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
