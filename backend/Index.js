@@ -8,7 +8,7 @@ const app = express();
 
 require("dotenv").config();
 const PORT = process.env.PORT || 2020;
-const URL = process.env.DATABASE || " mongodb://localhost:27017/Mern"
+const URL = process.env.DATABASE
 
 //Connection with mongodb
 ConnectMongoDb(URL)
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors(
     {
-        origin: process.env.FRONTEND_URL,
+        // origin: process.env.FRONTEND_URL,
         credentials: true,
         allowedHeaders: ['Content-Type', 'Authorization']
     }
