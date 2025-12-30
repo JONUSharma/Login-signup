@@ -27,7 +27,7 @@ function Login() {
 
         setIsLoading(true);
         try {
-            const url = `${import.meta.env.VITE_BACKEND_URL}/login`;
+            const url = `${import.meta.env.VITE_BACKEND_URL}/user/login`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

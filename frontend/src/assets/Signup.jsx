@@ -37,7 +37,7 @@ function Signup() {
 
         setIsLoading(true);
         try {
-            const url = `${import.meta.env.VITE_BACKEND_URL}/signup`;
+            const url = `${import.meta.env.VITE_BACKEND_URL}/user/signup`;
             // Note: We don't send ConfirmPassword to the backend, just the main data
             const signupData = { Name, Email, Password };
             
