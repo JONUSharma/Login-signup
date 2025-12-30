@@ -2,7 +2,8 @@ const express = require("express");
 const { ConnectMongoDb } = require("./Connection/connection");
 const { user } = require("./Model/model");
 const cors = require("cors");
-const route = require("./Routes/User_routes.js");
+const user_route = require("./Routes/User_routes.js");
+const task_route = require("./Routes/Task_routes.js")
 const bodyParser = require("body-parser");
 const app = express();
 
@@ -26,7 +27,8 @@ app.use(bodyParser.json())
 
 
 //routes
-app.use("/", route)
+app.use("/user", user_route)
+app.use("/task", task_route);
 
 
 app.listen(PORT, () => console.log("express server started on port :", PORT))

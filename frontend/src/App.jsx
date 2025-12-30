@@ -6,6 +6,7 @@ import Home from './assets/Home'
 import "react-toastify/ReactToastify.css"
 import "./App.css"
 import RefreshHandler from './assets/RefreshHandler'
+import Footer from './assets/Footer'
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false);
   const PrivateRoute = ({ element }) => {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/home' element={<PrivateRoute element={<Home />} />}></Route>
       </Routes>
+      <Footer/>
     </div>
   )
 }
