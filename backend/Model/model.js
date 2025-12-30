@@ -9,13 +9,13 @@ const userSchema = new mongoose.Schema({
     Email: {
         type: String,
         required: true,
-        unique:true
+        unique: true
     },
     Password: {
         type: String,
         required: true,
     }
-})
+}, { timestamps: true })
 
-const user = mongoose.model("users",userSchema)
-module.exports = { user}
+const user = mongoose.model("users", userSchema)
+module.exports = { user }

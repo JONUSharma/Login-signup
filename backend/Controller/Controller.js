@@ -12,18 +12,12 @@ const signup = async (req, res) => {
         const userModel = new user({ Name, Email, Password })
         userModel.Password = await bcrypt.hash(Password, 10);
         await userModel.save();
-        res.status(201).json({ msg: "Signup Successfully", success: true })
+        res.status(201)
+            .json({ msg: "Signup Successfully", success: true, user : userModel })
     } catch (error) {
         res.status(500)
-            .cookie(userModel, {
-                sameSite: 'none',
-                httpOnly: true,
-                expires: new Date(Date.now() + 2 * 24 * 60 * 1000),
-                secure: process.env.NODE_ENV === "production"
-            })
             .json({
-                msg: error,
-                msg2: "Internal server error", success: false
+                msg: "Internal server error", success: false
             })
     }
 }
