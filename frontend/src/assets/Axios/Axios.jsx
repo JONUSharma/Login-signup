@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const Axios = axios.create({
-    //   baseURL: import.meta.env.VITE_BACKEND_URL,
-    baseURL: "http://localhost:2020",
+      baseURL: import.meta.env.VITE_BACKEND_URL,
+    // baseURL: "http://localhost:2020",
     headers: {
         "Content-Type": "application/json",
     },
